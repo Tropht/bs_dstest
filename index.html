@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>DSTest</title>
+    <!-- Reset -->
+    <link href="styles/reset.css" rel="stylesheet" type="text/css">
+    <!-- Phone -->
+    <link href="styles/small.css" rel="stylesheet" type="text/css">
+    <!-- Tablet -->
+    <link href="styles/medium.css" rel="stylesheet" type="text/css">
+    <!-- Desktop -->
+    <link href="styles/large.css" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+
+    <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
+
+  </head>
+  <body ng-app="dsTestApp">
+    <header>
+      <h1>DSTest</h1>
+      <div id="searchContainer">
+        <i class="fas fa-search searchIcon"></i>
+        <input id="searchField" type="text" name="" ng-model="searchClient" placeholder="Name, Username, Email, Phone, Etc...">
+      </div>
+    </header>
+
+    <main class="container" ng-controller="appCtlr">
+    	<figure ng-repeat="data in clientData | searchForClient:searchClient" ng-click="getClientInfo(this)">
+        <h1>{{data.name}}</h1>
+        <h2>{{data.username}}</h2>
+        <h3>{{data.email}}</h3>
+        <i class="fas fa-external-link-alt"></i>
+      </figure>
+
+    </main>
+
+    <section>
+      <div class="sectionHeader">
+        <i class="fas fa-window-close" onclick="closeDialog()"></i>
+      </div>
+
+
+      <div class="sectionMain">
+        <div class="clientDivider">
+          <article>
+            <h4>Client Name</h4>
+            <input id="clientName" type="text" name="test" value="" readonly>
+          </article>
+
+          <article>
+            <h4>Username</h4>
+            <input id="clientUsername" type="text" name="test" value="" readonly>
+          </article>
+
+          <article>
+            <h4>Email</h4>
+            <input id="clientEmail" type="text" name="test" value="" readonly>
+          </article>
+
+          <article>
+            <h4>Website</h4>
+            <input id="clientWebsite" type="text" name="test" value="" readonly>
+          </article>
+        </div>
+
+        <div class="clientDivider">
+          <article>
+            <h4>Address</h4>
+            <h5>Street</h5>
+            <input id="clientAddressStreet" type="text" name="test" value="" readonly>
+            <h5>Suite</h5>
+            <input id="clientAddressSuite" type="text" name="test" value="" readonly>
+            <h5>City</h5>
+            <input id="clientAddressCity" type="text" name="test" value="" readonly>
+            <h5>Zip</h5>
+            <input id="clientAddressZipcode" type="text" name="test" value="" readonly>
+            <h5>Map</h5>
+            <div id="clientAddressGeo"></div>
+          </article>
+        </div>
+
+        <div class="clientDivider">
+          <article>
+            <h4>Company</h4>
+            <h5> Company Name</h5>
+            <input id="clientCompanyName" type="text" name="test" value="" readonly>
+            <h5> Company Phrase</h5>
+            <input id="clientCompanyPhrase" type="text" name="test" value="" readonly>
+            <h5> Company Description</h5>
+            <input id="clientCompanyBs" type="text" name="test" value="" readonly>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Developed by Blake Stevens</p>
+    </footer>
+
+    <div id="shade"></div>
+
+    <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>

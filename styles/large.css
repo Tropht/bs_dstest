@@ -1,0 +1,18 @@
+@media only screen and (min-width: 1042px) and (max-width: 999em) {
+  header h1 {
+    position: absolute;
+    z-index: -1;
+    top: 13px;
+    left: 13px;
+    font-size: 1.3em; }
+  header #searchContainer {
+    display: block;
+    width: 1042px;
+    margin: auto; }
+
+  main {
+    width: 1042px;
+    margin: auto;
+    margin-top: 45px; } }
+
+/*# sourceMappingURL=large.css.map */
